@@ -114,26 +114,101 @@
        
     /**PROJECTS**/
        
-       .Line1{
-        display: flex;
-        flex-wrap: wrap;
-       }
-       
-       .Project1L{ 
-        flex: 1;
-        background-color: #6A7E92; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 60px;
-       }
-       
-       .Project1L img{ 
-        width: 100%;
-        height: auto;
-        border-radius: 6px;
-       }
-       
+     .project-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Left column: portrait layout */
+.left-column {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-column {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px; /* Adjust this for how much background you want to show */
+  box-sizing: border-box;
+}
+
+.project-box img {
+  width: 100%;
+  height: 100%;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: cover;
+  border: none;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-box:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay content */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(62, 58, 57, 0.7); /* semi-transparent Old Ink */
+  color: #F5F1EA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.project-box:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay h4 {
+  font-family: "Bitter", serif;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #F5F1EA;
+}
+
+.project-overlay p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  margin: 0;
+  color: #F5F1EA;
+}
+
+
+/* Color blocks */
+.bg-blueprint { background-color: #6A7E92; }
+.bg-amber-hush { background-color: #DFB899; }
+.bg-oat-milk { background-color: #F5F1EA; }
+.bg-vyka-lume { background-color: #90B4D3; }
+
+
        
     </style>
     
@@ -160,17 +235,41 @@
     
     <!--Projects-->
     
-    <!--line 1-->
+  <section class="project-wrapper">
+  <!-- Left Column -->
+  <div class="left-column">
+  
+    <div class="project-box bg-blueprint">
+  <a href="gym-project.html">
+    <img src="GYMCOVER.png" alt="Gym Video Thumbnail">
+    <div class="project-overlay">
+      <h4>PR or ER</h4>
+      <p>Where the line blurs between strength and stubbornness</p>
+    </div>
+  </a>
+</div>
+
+    <div class="project-box bg-amber-hush"></div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column">
     
-    <section class="Line1">
-      <div class="Project1L"> <!--Project,Line number, position-->
-        <img src="GYMCOVER.png" alt="cinematic gym video still image capture">
-      </div>
-      <div class="Project1R"> <!--Project,Line number, position-->
-        <img src="GYMCOVER.png" alt="cinematic gym video still image capture">
-      </div>
-    
-    </section>
+    <div class="project-box bg-amber-hush">
+  <a href="logo-collage.html">
+    <img src="LOGOCOLLAGE.png" alt="Logo Exploration">
+    <div class="project-overlay">
+      <h4>R.Chav Branding</h4>
+      <p>A logo evolution story, told in color and curves</p>
+    </div>
+  </a>
+</div>
+
+    <div class="project-box bg-vyka-lume"></div>
+  </div>
+</section>
+
+
  
     
   </body>
