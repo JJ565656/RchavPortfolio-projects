@@ -120,13 +120,14 @@
   height: 100vh;
 }
 
-/* Left column: portrait layout */
+/** Left column: portrait layout **/
 .left-column {
   flex: 0.6;
   display: flex;
   flex-direction: column;
 }
 
+/** Left column: landscape layout **/
 .right-column {
   flex: 1.4;
   display: flex;
@@ -138,39 +139,41 @@
   overflow: hidden;
 }
 
-.project-box a {
+.project-box a:link,
+.project-box a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 30px;
   width: 100%;
   height: 100%;
-  padding: 20px; /* Adjust this for how much background you want to show */
   box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .project-box img {
-  width: 100%;
-  height: 100%;
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: cover;
-  border: none;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
-  transition: transform 0.3s ease;
 }
 
 .project-box:hover img {
   transform: scale(1.05);
 }
 
-/* Overlay content */
+/** Overlay content **/
 .project-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(62, 58, 57, 0.7); /* semi-transparent Old Ink */
+  background-color: rgba(62, 58, 57, 0.7);
   color: #F5F1EA;
   display: flex;
   flex-direction: column;
@@ -202,11 +205,12 @@
 }
 
 
-/* Color blocks */
+/** Color blocks **/
 .bg-blueprint { background-color: #6A7E92; }
 .bg-amber-hush { background-color: #DFB899; }
-.bg-oat-milk { background-color: #F5F1EA; }
+.bg-jakarta-dusk { background-color: #E3DBCC; }
 .bg-vyka-lume { background-color: #90B4D3; }
+.bg-clay { background-color: #A4978E; }
 
 
        
@@ -240,7 +244,7 @@
   <div class="left-column">
   
     <div class="project-box bg-blueprint">
-  <a href="gym-project.html">
+  <a href="#gymvideo">
     <img src="GYMCOVER.png" alt="Gym Video Thumbnail">
     <div class="project-overlay">
       <h4>PR or ER</h4>
@@ -249,14 +253,22 @@
   </a>
 </div>
 
-    <div class="project-box bg-amber-hush"></div>
+    <div class="project-box bg-clay">
+      <a href="#ketelone">
+    <img src="KETEL.png" alt="Ketel one rebranding project promotional video thumbnail">
+    <div class="project-overlay">
+      <h4>Ketel One Rebranding</h4>
+      <p>Cleaned it up, gave it edge, and made it something you'd actually want on your shelf</p>
+    </div>
+  </a>
+    </div>
   </div>
 
   <!-- Right Column -->
   <div class="right-column">
     
     <div class="project-box bg-amber-hush">
-  <a href="logo-collage.html">
+  <a href="#personalrebranding">
     <img src="LOGOCOLLAGE.png" alt="Logo Exploration">
     <div class="project-overlay">
       <h4>R.Chav Branding</h4>
@@ -265,7 +277,15 @@
   </a>
 </div>
 
-    <div class="project-box bg-vyka-lume"></div>
+    <div class="project-box bg-vyka-lume">
+     <a href="#silentfilm">
+    <img src="SILENTFILM.png" alt="place silent film">
+    <div class="project-overlay">
+      <h4>Arcade Silent Film</h4>
+      <p>What happens when nostalgia meets noise... then gets muted?</p>
+    </div>
+  </a>
+      </div>
   </div>
 </section>
 
